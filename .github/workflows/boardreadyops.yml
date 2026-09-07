@@ -20,3 +20,6 @@ jobs:
         with:
           mode: enforce
           fail-on: high
+        env:
+          # The action reads GITHUB_TOKEN from the environment; Actions does not export it.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
