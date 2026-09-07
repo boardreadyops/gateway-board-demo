@@ -1,0 +1,22 @@
+name: fabrication readiness
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  readiness:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - name: BoardReadyOps
+        uses: oaslananka/boardreadyops@0d2862eea2295adc799dd206662ec2b79d67a59b
+        with:
+          mode: enforce
+          fail-on: high
