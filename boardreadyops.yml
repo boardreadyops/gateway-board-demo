@@ -1,6 +1,6 @@
 version: 1
 mode: enforce
-releaseMode: prototype
+releaseMode: pilot
 projects:
   - path: .
 fail-on: high
@@ -8,20 +8,19 @@ rules:
   bom.missing-mpn: true
   bom.compliance: true
   bom.lifecycle: true
-  bom.risk-score: true
   bom.eol-detection: true
   bom.unknown-lifecycle: true
-  bom.single-source: false
+  bom.identity-conflicts: true
   design.board-outline: true
   design.unique-references: true
   drc.kicad: true
-  manufacturing.package-completeness: false
-  manufacturing.fab-notes: false
-  manufacturing.position-coverage: false
-  manufacturing.drill-coverage: false
+  manufacturing.fab-notes: true
+  manufacturing.layer-stackup: true
+  manufacturing.drill-coverage: true
   release.revision-set: true
-  release.changelog-present: false
-  release.tag-matches-revision: false
+  release.changelog-present: true
+  release.version-format: true
+  release.tag-matches-revision: true
 report:
   sarif: boardreadyops.sarif.json
   json: boardreadyops.findings.json
