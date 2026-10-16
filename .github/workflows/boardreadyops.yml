@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   checks: write
   pull-requests: write
 
@@ -15,8 +16,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: BoardReadyOps
-        uses: oaslananka/boardreadyops@0d2862eea2295adc799dd206662ec2b79d67a59b
+        uses: oaslananka/boardreadyops@a4b0c0724035e8ac90f6ed30891360c8aeb62190
         with:
           mode: enforce
           fail-on: high
