@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   checks: write
   pull-requests: write
 
@@ -15,8 +16,13 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: BoardReadyOps
-        uses: oaslananka/boardreadyops@0d2862eea2295adc799dd206662ec2b79d67a59b
+        uses: oaslananka/boardreadyops@f8edef07e605882a4b6f831e38d5419dc3401584
         with:
           mode: enforce
           fail-on: high
+        env:
+          # The action reads GITHUB_TOKEN from the environment; Actions does not export it.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
