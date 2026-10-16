@@ -19,7 +19,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: BoardReadyOps
-        uses: oaslananka/boardreadyops@a4b0c0724035e8ac90f6ed30891360c8aeb62190
+        uses: oaslananka/boardreadyops@022c85aa289d3e44b383fdc705b240c46d442ebe
         with:
           mode: enforce
           fail-on: high
