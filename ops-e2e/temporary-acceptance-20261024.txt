@@ -1,0 +1,4 @@
+OPS ChatGPT → GitHub write acceptance fixture.
+Date: 2026-10-24.
+Test repo: boardreadyops/gateway-board-demo.
+Do not merge this branch. Close the draft PR and delete the temporary branch after verification.
