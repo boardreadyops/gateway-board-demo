@@ -1,5 +1,0 @@
-ops-github-write-uat
-scope=boardreadyops/gateway-board-demo
-issue=oaslananka/ops#123
-phase=updated
-protected_main_write=false
