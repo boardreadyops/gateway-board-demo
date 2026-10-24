@@ -1,0 +1,3 @@
+ops-github-write-uat
+phase=delete-next
+synthetic=true
