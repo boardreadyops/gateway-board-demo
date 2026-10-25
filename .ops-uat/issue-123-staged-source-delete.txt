@@ -1,0 +1,3 @@
+ops-issue-123-staged-uploader
+kind=delete
+fixture-only=true
